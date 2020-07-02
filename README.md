@@ -2,7 +2,7 @@
 
 ## How to run
 1. `cp .env.example .env`
-2. Paste your Binance apis
+2. Paste your Binance APi`s credentials
 3. Run `docker-compose up`
 
 To check if service working properly run: 
