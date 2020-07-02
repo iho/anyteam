@@ -17,6 +17,5 @@ async def calc(
     calc_response = CalcResponse(
         rate=rate, out_amount=str(Decimal(request.in_amount) * Decimal(rate))
     )
-    # import ipdb;ipdb.set_trace()
     response.headers["sign"] = utils.sign_dict(calc_response.dict())
     return calc_response
