@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 @app.post("/calc/", response_model=CalcResponse)
-async def calc(
+def calc(
     request: CalcRequest, response: Response,
 ):
     rate = utils.get_rate(request.in_currency + request.out_currency)
