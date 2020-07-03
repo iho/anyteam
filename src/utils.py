@@ -21,8 +21,8 @@ def sign_dict(dict_) -> str:
 
 
 @cached(cache=TTLCache(maxsize=1024, ttl=600))
-def get_rate(symbol):
-    url = API_URL + f"/api/v3/ticker/price?symbol={symbol}"
+def get_rate(symbol) -> str:
+    url = API_URL + f"api/v3/ticker/price?symbol={symbol}"
     resp = requests.get(url)
     resp.raise_for_status()
     return resp.json()["price"]
