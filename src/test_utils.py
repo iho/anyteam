@@ -18,5 +18,8 @@ def test_sign_dict():
 
 def test_get_rate():
     with requests_mock.Mocker() as m:
-        m.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT", json={"symbol": "BTCUSDT", "price": "9090.72000000"})
+        m.get(
+            "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT",
+            json={"symbol": "BTCUSDT", "price": "9090.72000000"},
+        )
         assert get_rate("BTCUSDT") == "9090.72000000"

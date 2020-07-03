@@ -6,8 +6,7 @@ from decimal import *
 import requests
 from cachetools import TTLCache, cached
 
-API_KEY = os.environ["API_KEY"]
-SECRET_KEY = os.environ["SECRET_KEY"]
+API_KEY = "Test_Keys_12345"
 API_URL = "https://api.binance.com/"
 
 getcontext().prec = 18
