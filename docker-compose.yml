@@ -2,5 +2,7 @@ version: '3.7'
 services:
   backend:
     build: ./src
+    environment:
+      - PRECACHED_CURRENCY_DESTINATIONS=BTCUSDT,ETHUSDT
     ports:
       - 8000:8000
