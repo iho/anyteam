@@ -2,11 +2,10 @@ import asyncio
 import hashlib
 import hmac
 import os
-from decimal import *
+from decimal import getcontext
 from typing import Dict, Optional
 
 import aiohttp
-import requests
 from aiocache import Cache, cached
 
 API_KEY = "Test_Keys_12345"
@@ -41,7 +40,7 @@ class BinanceCache:
         if not self.session:
             loop = asyncio.get_event_loop()
             self.session = aiohttp.ClientSession(loop=loop)
-        url = API_URL + f"api/v3/ticker/price?symbol={symbol}"
+        url = f"{API_URL}api/v3/ticker/price?symbol={symbol}"
         async with self.session.get(url) as response:
             response.raise_for_status()
             resp = await response.json()
